@@ -1,0 +1,10 @@
+.env
+quickdm.db
+__pycache__/
+*.py[cod]
+
+# Backup scripts
+app_backup.py
+app_before_dm.py
+app_before_live_reply.py
+app_dryrun_backup.py
