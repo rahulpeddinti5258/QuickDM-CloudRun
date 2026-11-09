@@ -1,0 +1,19 @@
+{
+  "name": "quickdm",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test cloudflare/*.test.js",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "db:migrate:local": "wrangler d1 migrations apply quickdm-staging --local",
+    "db:migrate:remote": "wrangler d1 migrations apply quickdm-staging --remote"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "miniflare": "5.20261104.0-beta",
+    "wrangler": "4.158.0"
+  }
+}

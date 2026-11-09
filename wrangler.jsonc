@@ -1,0 +1,27 @@
+{
+  "name": "quickdm-staging",
+  "main": "cloudflare/worker.js",
+  "compatibility_date": "2026-11-08",
+  "workers_dev": true,
+  "vars": {
+    "IG_USER_ID": "17841423067800107",
+    "API_VERSION": "v26.0",
+    "PROFILE_USERNAME": "uglyphase_",
+    "RESOURCE_URL": "https://linktr.ee/uglyphase",
+    "DRY_RUN": "true",
+    "FOLLOW_CHECK_VERIFIED": "false",
+    "INITIAL_BUTTON_VERIFIED": "false"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "quickdm-staging",
+    "database_id": "034a3c70-c31f-48dd-81f6-5fd6e518f6f0",
+    "migrations_dir": "migrations"
+  }],
+  "queues": {
+    "producers": [{ "binding": "EVENT_QUEUE", "queue": "quickdm-staging-events" }],
+    "consumers": [{ "queue": "quickdm-staging-events", "max_batch_size": 1, "max_retries": 3 }]
+  },
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "observability": { "enabled": false }
+}
