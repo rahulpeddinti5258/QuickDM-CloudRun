@@ -67,3 +67,5 @@ The SQLite `DatabaseSync` wrapper tests SQL transitions, and Miniflare tests loc
 ## Current setup status
 
 The `quickdm-staging` D1 database has been created in the connected Cloudflare account; its ID is committed in the binding configuration (this ID is not a credential). The default Worker and queue names explicitly identify staging. Live secrets and the Instagram webhook have not been changed.
+
+The staging schema has been applied and all five tables verified in the D1 console. The `quickdm-staging-events` queue has also been created. Node 24.22.2 is pinned in `.node-version` using Cloudflare's [documented build-image version override](https://developers.cloudflare.com/workers/ci-cd/builds/build-image/). No Worker has been deployed yet.
